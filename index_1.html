@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+  		<div class="row">
+    <div class="col-xl-6">
+
+	<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Formularz A</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="Podaj swoje imię">Podaj swoje imię</label>  
+  <div class="col-md-6">
+  <input id="Podaj swoje imię" name="Podaj swoje imię" type="text" placeholder="Podaj imię" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput">Podaj swoje nazwisko</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="textinput" type="text" placeholder="Podaj nazwisko" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput">Skąd jesteś </label>  
+  <div class="col-md-6">
+  <input id="textinput" name="textinput" type="text" placeholder="Podaj nazwę miejscowości" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group" style="position: static;">
+            <label class="col-md-6 control-label" for="select-2">Wybierz swoją płeć</label>
+             <div class="col-md-6">
+            <select class="form-control" id="select-2">
+                <option value="Option 1">Kobieta</option>
+                <option value="Option 2">Mężczyzna</option>
+            </select>
+        </div>
+        </div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textarea">Opowiedz Nam o swoich zainteresowaniach:</label>
+  <div class="col-md-6">                     
+    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="button1id"></label>
+  <div class="col-md-8">
+    <a href="koniec.html" id="btn_form_1" name="button1id" class="btn btn-success">Wyślij</a>
+    <button  name="button2id" class="btn btn-danger">Ignoruj</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+ </div>
+
+
+
+ <fieldset>
+<form>
+    <legend>Formularz B</legend>
+  <div class="row">
+    <div class="col-md-6" style="">
+        <div class="form-group" style="">
+            <label for="input-text-1">Podaj swoje imię</label>
+            <input type="text" class="form-control" id="input-id-1" placeholder="Podaj imię">
+        </div>
+        <div class="form-group" >
+            <label for="input-id-3">Skąd jesteś</label>
+            <input type="text" class="form-control" id="input-id-3" placeholder="Podaj nazwę miejscowości">
+        </div>
+        <div >
+    </div>
+  <label  for="textarea">Opowiedz Nam o swoich zainteresowaniach:</label>
+  <div>                     
+    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+  </div>
+</div>
+    
+    <div  style="">
+        <div class="form-group" style="position: static;">
+            <label for="input-id-2">Podaj swoje nazwisko</label>
+            <input type="text" class="form-control" id="input-id-2" placeholder="Podaj nazwisko">
+        </div>
+        <div class="form-group" style="position: static;">
+            <label for="select-2">Wybierz swoją płeć</label>
+            <select class="form-control" id="select-2">
+                <option value="Option 1">Kobieta</option>
+                <option value="Option 2">Mężczyzna</option>
+            </select>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="form-group">
+  <label class="col-md-6 control-label" for="button1id"></label>
+  <div class="col-md-8">
+   <a href="koniec.html" id="btn_form_2"name="button1id" class="btn btn-success">Wyślij</a>
+    <button name="button2id" class="btn btn-warning">Ignoruj</button>
+  </div>
+</div>
+</fieldset>
+</form>
+
+  
+
+
+
+
+ 
+  
+</form>
+</fieldset>
+
+<script>
+        document.addEventListener("click", (e)=>{
+            let id = e.target.id;
+
+            if(!id.includes("form")){
+                return;
+            }
+
+            if (localStorage.getItem('nrFormAB') === null) {
+                localStorage.setItem("nrFormAB", JSON.stringify([]));
+            }
+            var values = JSON.parse(localStorage.getItem('nrFormAB'));
+            values.push(id.split('_')[2]);
+            localStorage.setItem('nrFormAB', JSON.stringify(values));
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
