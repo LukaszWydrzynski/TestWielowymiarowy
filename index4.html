@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <div class="d-flex justify-content-center align-items-center container ">
+      
+    <div class="col-xl-6">
+
+  <form class="form-horizontal">
+<fieldset>
+<legend>Formularz C</legend>
+
+
+<div class="card-deck">
+  <div class="card">
+    <img  src="realmadrid1.png" alt="Card image cap">
+    <div class="card-body">
+     
+
+
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Wypełnij ankietę i otrzymaj koszulkę !</legend>
+
+<!-- Text input-->
+<div class="row">
+    <div class="col-md-6" style="">
+        <div class="form-group" style="">
+            <label for="input-text-1">Podaj swoje imię</label>
+            <input type="text" class="form-control" id="input-id-1" placeholder="Podaj imię">
+        </div>
+         
+            <label for="Wybierz rozmiar koszulki">Wybierz rozmiar koszulki</label>
+            <select class="form-control" id="select-1">
+                <option value="Option 1">S</option>
+                <option value="Option 2">M</option>
+                <option value="Option 3">L</option>
+                <option value="Option 3">XL</option>
+            </select>
+        
+    </div>
+    <div class="col-md-6" style="">
+        
+            <label for="input-id-3">Podaj swoje nazwisko</label>
+            <input type="text" class="form-control" id="input-id-3" placeholder="Podaj nazwisko">
+        
+        
+            <label for="input-id-2">Podaj miejsce zamieszkania</label>
+            <input type="text" class="form-control" id="input-id-2" placeholder="Podaj miejscowość">
+        
+    </div>
+</div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-12 control-label" for="button_id_1"></label>
+  <div class="col-md-12">
+    <a href="koniec.html" id="btn_form_5" class="btn btn-outline-warning">Złóż zamówienie</a>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Łukasz Wydrzyński</small>
+    </div>
+  </div>
+
+
+  </fieldset>
+</div>
+
+<script>
+        document.addEventListener("click", (e)=>{
+            let id = e.target.id;
+
+            if(!id.includes("form")){
+                return;
+            }
+
+            if (localStorage.getItem('nrFormAB') === null) {
+                localStorage.setItem("nrFormAB", JSON.stringify([]));
+            }
+            var values = JSON.parse(localStorage.getItem('nrFormAB'));
+            values.push(id.split('_')[2]);
+            localStorage.setItem('nrFormAB', JSON.stringify(values));
+        });
+    </script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
